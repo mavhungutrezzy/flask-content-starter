@@ -6,6 +6,7 @@ from flask_compress import Compress
 from app.config import get_config
 from app.routes.errors import errors
 from app.routes.pages import pages
+from app.routes.seo import seo_bp
 from app.utils.cache import cache
 
 
@@ -24,6 +25,7 @@ def create_app():
     # Register blueprints.
     app.register_blueprint(pages)
     app.register_blueprint(errors)
+    app.register_blueprint(seo_bp)
 
     @app.after_request
     def add_cache_headers(response):
