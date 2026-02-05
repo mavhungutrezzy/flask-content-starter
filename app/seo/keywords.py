@@ -14,6 +14,18 @@ KEYWORDS = {
         "gzip brotli",
         "seo architecture",
     ],
+    "404": [
+        "page not found",
+        "content platform",
+        "seo site",
+        "flask starter",
+    ],
+    "500": [
+        "server error",
+        "content platform",
+        "flask uptime",
+        "seo performance",
+    ],
 }
 
 

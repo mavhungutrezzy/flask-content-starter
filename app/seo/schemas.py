@@ -18,6 +18,18 @@ SCHEMAS = {
         "name": "About Content Platform Starter",
         "url": "https://example.com/about",
     },
+    "404": {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Page Not Found",
+        "url": "https://example.com/404",
+    },
+    "500": {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Server Error",
+        "url": "https://example.com/500",
+    },
 }
 
 

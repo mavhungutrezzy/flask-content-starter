@@ -9,6 +9,14 @@ META = {
         "title": "About | Content Platform Starter",
         "description": "Learn how this Flask starter keeps content pages fast, cacheable, and search-friendly.",
     },
+    "404": {
+        "title": "Page Not Found | Content Platform Starter",
+        "description": "The page you requested could not be found. Explore our latest content and resources.",
+    },
+    "500": {
+        "title": "Server Error | Content Platform Starter",
+        "description": "We hit a snag. Please try again soon while we resolve the issue.",
+    },
 }
 
 
