@@ -1,0 +1,11 @@
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+header a {
+  color: #1a1a1a;
+}
+
+header a:hover {
+  color: #0d6efd;
+}

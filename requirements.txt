@@ -1,0 +1,4 @@
+Flask==3.0.3
+Flask-Compress==1.15
+Flask-Caching==2.3.0
+gunicorn==22.0.0

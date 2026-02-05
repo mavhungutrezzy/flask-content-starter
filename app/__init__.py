@@ -1,0 +1,39 @@
+"""Flask application factory and global app setup."""
+
+from flask import Flask, request
+from flask_compress import Compress
+
+from app.config import get_config
+from app.routes.errors import errors
+from app.routes.pages import pages
+from app.utils.cache import cache
+
+
+compress = Compress()
+
+
+def create_app():
+    """Application factory for creating the Flask app."""
+    app = Flask(__name__, static_folder="static", template_folder="templates")
+    app.config.from_object(get_config())
+
+    # Initialize extensions.
+    cache.init_app(app)
+    compress.init_app(app)
+
+    # Register blueprints.
+    app.register_blueprint(pages)
+    app.register_blueprint(errors)
+
+    @app.after_request
+    def add_cache_headers(response):
+        """Add long-term cache headers for static assets.
+
+        Static assets are versioned by their filenames, so we can cache them for a year
+        to reduce bandwidth and improve repeat-visit performance.
+        """
+        if request.path.startswith("/static/"):
+            response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+        return response
+
+    return app
