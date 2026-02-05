@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="display-6 fw-semibold">About this boilerplate</h1>
+  <p class="lead text-muted">
+    This starter focuses on high-performance content delivery with minimal overhead.
+  </p>
+  <div class="row g-4 mt-3">
+    <div class="col-md-6">
+      <h2 class="h5">Performance-first</h2>
+      <p>
+        HTML responses are cached for an hour, and static assets are cached for a year
+        to keep CDN and server costs low.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="h5">SEO-ready</h2>
+      <p>
+        Meta tags, keywords, and JSON-LD schemas live in a dedicated SEO package and
+        are injected into templates dynamically.
+      </p>
+    </div>
+  </div>
+{% endblock %}
