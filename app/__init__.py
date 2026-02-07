@@ -7,6 +7,9 @@ from app.config import get_config
 from app.routes.errors import errors
 from app.routes.pages import pages
 from app.routes.seo import seo_bp
+from app.seo.keywords import get_keywords
+from app.seo.meta import get_meta
+from app.seo.schemas import get_schema
 from app.sitemap import sitemap
 from app.utils.cache import cache
 
@@ -28,6 +31,17 @@ def create_app():
     app.register_blueprint(pages)
     app.register_blueprint(errors)
     app.register_blueprint(seo_bp)
+
+    @app.context_processor
+    def inject_seo():
+        """Inject default SEO data into all templates."""
+        return {
+            "seo": {
+                "meta": get_meta("home"),
+                "keywords": get_keywords("home"),
+                "schema": get_schema("home"),
+            }
+        }
 
     @app.after_request
     def add_cache_headers(response):
