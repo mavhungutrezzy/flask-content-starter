@@ -10,7 +10,7 @@ from app.utils.cache import cache
 pages = Blueprint("pages", __name__)
 
 
-@pages.route("/")
+@pages.route("/", endpoint="index")
 @cache.cached(timeout=3600)
 def home():
     """Home page."""
