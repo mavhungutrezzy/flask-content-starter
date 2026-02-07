@@ -7,6 +7,7 @@ from app.config import get_config
 from app.routes.errors import errors
 from app.routes.pages import pages
 from app.routes.seo import seo_bp
+from app.sitemap import sitemap
 from app.utils.cache import cache
 
 
@@ -21,6 +22,7 @@ def create_app():
     # Initialize extensions.
     cache.init_app(app)
     compress.init_app(app)
+    sitemap.init_app(app)
 
     # Register blueprints.
     app.register_blueprint(pages)
